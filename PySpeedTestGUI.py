@@ -6,7 +6,7 @@ import os
 import sys
 
 import PySimpleGUI as sg
-import pandas as pd
+from pandas import DataFrame, to_datetime, concat  # , read_csv
 import speedtest
 
 bit_to_mb_factor = 10 ** 6
@@ -20,7 +20,7 @@ if not os.path.isdir(output_dir):
 app_logo_fname = "app_logo.ico"
 
 results = dict()
-results_df = pd.DataFrame()
+results_df = DataFrame()
 timestamp_fmt = "%d %B, %Y %H:%M:%S"
 cities_rgx = "United Kingdom|Italy|Russian Federation|Estonia|Albania|Tunisia"
 cities_rgx += "Morocco|Turkey|United States"
@@ -38,9 +38,9 @@ def close_all():
 
 if test_speed == "Yes":
     s = speedtest.Speedtest()
-    servers_df = pd.DataFrame.from_dict(s.get_servers(), orient="index")
+    servers_df = DataFrame.from_dict(s.get_servers(), orient="index")
     servers_df = servers_df[0].reset_index(drop=True)
-    servers_df = pd.DataFrame(servers_df.to_list()).sort_values("d").set_index("id")  # sort by ping
+    servers_df = DataFrame(servers_df.to_list()).sort_values("d").set_index("id")  # sort by ping
     # servers_df.to_csv(output_dir+"servers.csv", index=False)
     # servers_df.head(2)
 
@@ -48,7 +48,7 @@ if test_speed == "Yes":
     server_inds = server_inds[server_inds.str.contains(cities_rgx, case=False)]
     server_inds = server_inds.drop_duplicates().index
 
-    start_time = pd.to_datetime('now')
+    start_time = to_datetime('now')
     Print = sg.EasyPrint  # (do_not_reroute_stdout=False)
     Print("Welcome to Worldwide Speed Test. \n\nFor this to work, please close" +
           " all internet related applications from all devices using the test" +
@@ -78,9 +78,9 @@ if test_speed == "Yes":
         #         clear_output(wait=True)
         Print(servers_df["name"].loc[server]+", "+servers_df["country"].loc[server])
 
-    results_df = pd.DataFrame(results).T
+    results_df = DataFrame(results).T
 
-    server_df, client_df = pd.DataFrame(), pd.DataFrame()
+    server_df, client_df = DataFrame(), DataFrame()
 
     for idx, server, client in results_df[["server", "client"]].itertuples():
         server_df = server_df.append(server, ignore_index=True)
@@ -88,17 +88,17 @@ if test_speed == "Yes":
 
     server_df.index, client_df.index = results_df.index, results_df.index
     results_df = results_df.drop(columns=["server", "client"])
-    results_df = pd.concat([results_df, server_df, client_df], axis=1, sort=False)
+    results_df = concat([results_df, server_df, client_df], axis=1, sort=False)
     # results_df.to_csv(output_dir+"results_df.csv", index=False)
 
     del server_df, client_df, results
     gc.collect()
 
-    finish_time = pd.to_datetime('now')
+    finish_time = to_datetime('now')
     Print("INFO: end time - ", str(finish_time.strftime(timestamp_fmt))+". This took",
           round((finish_time - start_time).total_seconds() / 60, 2), "minutes")
 
-    # results_df = pd.read_csv(output_dir+isp_name_package+".csv")
+    # results_df = read_csv(output_dir+isp_name_package+".csv")
     Print("\n\nMedian download speed is",
           round(results_df["download"].median() / bit_to_mb_factor, 2), "mb",
           "\nMedian upload speed is", round(results_df["upload"].median() / bit_to_mb_factor, 2), "mb",
