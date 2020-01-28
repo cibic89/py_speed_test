@@ -12,13 +12,10 @@ from pandas import DataFrame, to_datetime, concat  # , read_csv
 
 bit_to_mb_factor = 10 ** 6
 
-main_dir = str(os.path.normpath(os.getcwd()+os.sep+os.pardir+os.sep+os.pardir))
-images_dir = main_dir+os.sep+"images"+os.sep+"exports"+os.sep
-output_dir = main_dir+os.sep+"data"+os.sep+"processed"+os.sep
-# print(main_dir+"\n"+images_dir+"\n"+output_dir)
+main_dir = str(os.path.normpath(os.getcwd()))  # +os.sep+os.pardir+os.sep+os.pardir
+output_dir = main_dir+os.sep+"processed"  # +os.sep
+# print(main_dir+"\n"+output_dir)
 
-if not os.path.exists(output_dir):
-    os.mkdir(output_dir)
 
 results = dict()
 results_df = DataFrame()
@@ -132,10 +129,8 @@ else:
 
 # display(results_df.head())
 
-
 while save_results is None:
     save_results = yn_input("Save results as a csv file?")
-
 
 if test_speed & save_results:
     text_in = input('Please enter filename (without extension) [wst]: ') or "wst"
@@ -145,10 +140,12 @@ if test_speed & save_results:
             usable_input = False
             print("Please input a usable filename...")
         else:
+            if not os.path.exists(output_dir):
+                os.mkdir(output_dir)
             full_output_fname = output_dir + text_in + ".csv"
-            usable_input = True
             results_df.to_csv(full_output_fname, index=False)
             print("Results exported as:\n"+full_output_fname)
+            usable_input = True
             close_all()
 else:
     close_all()
