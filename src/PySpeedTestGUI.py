@@ -11,9 +11,11 @@ import speedtest
 
 bit_to_mb_factor = 10 ** 6
 
-main_dir = str(os.path.normpath(os.getcwd()))  # +os.sep+os.pardir
+main_dir = str(os.path.normpath(os.getcwd()+os.sep+os.pardir))
 images_dir = main_dir+os.sep+"images"+os.sep+"exports"+os.sep
 output_dir = main_dir+os.sep+"data"+os.sep+"processed"+os.sep
+print(main_dir+"\n"+images_dir+"\n"+output_dir)
+
 if not os.path.isdir(output_dir):
     os.mkdir(output_dir)
 
