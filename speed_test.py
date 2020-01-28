@@ -9,9 +9,6 @@ import PySimpleGUI as sg
 import pandas as pd
 import speedtest
 
-# pd.options.display.max_rows = 200
-# pd.options.display.precision = 2
-
 bit_to_mb_factor = 10 ** 6
 
 main_dir = str(os.path.normpath(os.getcwd()))  # +os.sep+os.pardir
