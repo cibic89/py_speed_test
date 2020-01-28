@@ -17,7 +17,7 @@ images_dir = main_dir+os.sep+"images"+os.sep+"exports"+os.sep
 output_dir = main_dir+os.sep+"data"+os.sep+"processed"+os.sep
 # print(main_dir+"\n"+images_dir+"\n"+output_dir)
 
-if not os.path.isdir(output_dir):
+if not os.path.exists(output_dir):
     os.mkdir(output_dir)
 
 results = dict()
