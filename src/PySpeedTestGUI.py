@@ -81,7 +81,7 @@ if test_speed:
     # print = sg.Easyprint  # (do_not_reroute_stdout=False)
     print("\n\nINFO: start time - "+start_time.strftime(timestamp_fmt)+" - currently speed testing:")
 
-    for i, server in enumerate(server_inds[:1]):
+    for i, server in enumerate(server_inds):
         s = speedtest.Speedtest()
 
         servers = [server]  # has to be one only
