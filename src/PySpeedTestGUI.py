@@ -55,7 +55,7 @@ def close_all():
     sys.exit()
 
 
-print("\nWelcome to Worldwide Speed Test. \n\nFor this to work, please close" +
+print("\nWelcome to Worldwide Speedtest®. \n\nFor this to work, please close" +
       " all internet related applications from all devices using the test" +
       " network. Optionally restart the broadband device, set your" +
       " test machine's power profile to high performance, and use the wired network.\n")
