@@ -9,10 +9,10 @@ Find out your real internet download/upload bandwidth and ping by peering multip
 [Pyinstaller](https://pypi.org/project/PyInstaller/) on Windows and Ubuntu/MacOS
 <br><br>
 ## Authors
-2020 ® [George Joseph](https://www.linkedin.com/in/gjoseph1/)
+[George Joseph](https://www.linkedin.com/in/gjoseph1/)
 <br><br>
 ## License
-This project is licensed under the GNU v3 License - see the [LICENSE](https://github.com/cibic89/py_speed_test/blob/master/LICENSE) file for details
+This project is licensed under the GNU v3 License - see the [LICENSE](https://github.com/cibic89/py_speed_test/blob/master/LICENSE.md) file for details
 <br><br>
 ## Acknowledgements
 Thanks to [sivel](https://github.com/sivel) for his [speedtest-cli](https://github.com/sivel/speedtest-cli/blob/master/speedtest.py) work
