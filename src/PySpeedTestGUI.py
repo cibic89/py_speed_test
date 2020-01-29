@@ -52,10 +52,11 @@ def close_all():
     sys.exit()
 
 
-print("\nWelcome to Worldwide Speedtest®. \n\nFor this to work, please close" +
+print("\nWelcome to Worldwide Speedtest®\n\nFor this to work, please close" +
       " all internet related applications from all devices using the test" +
-      " network. Optionally restart the broadband device, set your" +
-      " test machine's power profile to high performance, and use the wired network.\n")
+      " network. Optionally, restart the broadband device, set your test" +
+      " machine's power profile to high performance, and get as close as possible" +
+      " to the wireless access point or use the wired network.\n")
 
 
 while test_speed is None:
@@ -98,7 +99,10 @@ if test_speed:
         results[server] = s.results.dict()
 
         #         clear_output(wait=True)
-        print(servers_df["name"].loc[server]+", "+servers_df["country"].loc[server])
+        print(servers_df["name"].loc[server]+", "+servers_df["country"].loc[server]+": download",
+              round(results[server]["download"] / bit_to_mb_factor, 2), "mb - upload",
+              round(results[server]["upload"] / bit_to_mb_factor, 2), "mb - ping",
+              round(results[server]["download"], 2), "ms.")
 
     results_df = DataFrame(results).T
 
