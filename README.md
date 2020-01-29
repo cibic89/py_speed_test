@@ -2,8 +2,8 @@
 Find out your real internet download/upload bandwidth and ping by peering multiple servers spread across the world.
 <br><br>
 ## Download links (latest release)
-[Windows](https://github.com/cibic89/py_speed_test/blob/master/src/dist/WST.exe)<br>
-[MacOS/Linux](https://github.com/cibic89/py_speed_test/blob/master/src/dist/WST)
+[Windows](https://raw.githubusercontent.com/cibic89/py_speed_test/master/src/dist/WST.exe)<br>
+[MacOS/Linux](https://raw.githubusercontent.com/cibic89/py_speed_test/master/src/dist/WST)
 <br><br>
 ## Built with
 [Pyinstaller](https://pypi.org/project/PyInstaller/) on Windows and Ubuntu/MacOS
