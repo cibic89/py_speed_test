@@ -131,3 +131,11 @@ dmypy.json
 .pyre/
 
 !.idea
+/.idea/.gitignore
+/.idea/dictionaries/gjnet.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/other.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/py_speed_test.iml
+/.idea/vcs.xml

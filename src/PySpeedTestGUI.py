@@ -47,12 +47,12 @@ def yn_input(question):
 
 
 def close_all():
-    print("\nThank you for using Worldwide Speedtest® by Dr George Joseph 2020")
+    print("\nThank you for using Worldwide Speedtest® by George Joseph 2020")
     time.sleep(5)
     sys.exit()
 
 
-print("\nWelcome to Worldwide Speedtest®\n\nFor this to work, please close" +
+print("\nWelcome to Worldwide Speedtest® v1\n\nFor this to work, please close" +
       " all internet related applications from all devices using the test" +
       " network. Optionally, restart the broadband device, set your test" +
       " machine's power profile to high performance, and get as close as possible" +
