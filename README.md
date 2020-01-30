@@ -1,5 +1,6 @@
 # Worldwide Speed Test (py_speed_test)
 Find out your real internet download/upload bandwidth and ping by peering multiple servers spread across the world.
+![operational_screenshot](./src/operational_screenshot.png "Operational screenshot")
 <br><br>
 ## Download links (latest release)
 [Windows v1](https://raw.githubusercontent.com/cibic89/py_speed_test/master/src/dist/WST.exe)<br>
