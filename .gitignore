@@ -140,3 +140,4 @@ dmypy.json
 /.idea/py_speed_test.iml
 /.idea/vcs.xml
 /.idea/inspectionProfiles/profiles_settings.xml
+/src/dist/
