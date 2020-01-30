@@ -102,7 +102,7 @@ if test_speed:
         print(servers_df["name"].loc[server]+", "+servers_df["country"].loc[server]+": download",
               round(results[server]["download"] / bit_to_mb_factor, 2), "mb - upload",
               round(results[server]["upload"] / bit_to_mb_factor, 2), "mb - ping",
-              round(results[server]["download"], 2), "ms.")
+              round(results[server]["ping"], 2), "ms.")
 
     results_df = DataFrame(results).T
 
