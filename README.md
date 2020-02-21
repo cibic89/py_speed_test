@@ -3,11 +3,10 @@ Find out your real internet download/upload bandwidth and ping by peering multip
 ![operational_screenshot](src/images/operational_screenshot.png "Operational screenshot")
 <br><br>
 ## Download links (latest release)
-[Windows v1](https://sabercathost.com/9F3a/WST.exe)<br>
-[MacOS/Linux v1](https://sabercathost.com/9F39/WST)
+[Windows v1](https://sabercathost.com/i4eD/WST_windows.exe)<br>
+[MacOS/Linux v1](https://sabercathost.com/i4eD/WST_linux.wst)
 <br><br>
 ## Built with
-[Pyinstaller](https://pypi.org/project/PyInstaller/) on Windows and Ubuntu/MacOS
 <br><br>
 ## Authors
 [George Joseph](https://www.linkedin.com/in/gjoseph1/)
